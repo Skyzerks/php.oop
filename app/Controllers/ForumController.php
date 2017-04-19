@@ -47,5 +47,5 @@ class ForumController extends Controller
 
         View::show("section", ['section'=> $section, 'topics' => $topics]);
     }
-
+    
 }
