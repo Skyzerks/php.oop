@@ -13,5 +13,6 @@
     <ul>
         <li><a href="/">Forum (Main)</a></li>
         <li><a href="/login">login</a></li>
+        <li><a href="/registration">registration</a></li>
     </ul>
 </header>

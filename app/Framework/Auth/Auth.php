@@ -1,5 +1,5 @@
 <?php
-namespace App\Auth;
+namespace App\Framework\Auth;
 
 use \Exception;
 use App\Database\DB;

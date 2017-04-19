@@ -4,7 +4,7 @@ namespace App\Controllers;
 use App\Controllers\Controller;
 use App\Database\DB;
 use App\Models\User;
-use App\Auth\Auth;
+use App\Framework\Auth\Auth;
 use App\Framework\View;
 
 class AuthController extends Controller
@@ -24,31 +24,23 @@ class AuthController extends Controller
     public function registration()
     {
         $postForm = isset($_POST['reg']) ? $_POST['reg'] : null;
+
+        var_dump($_POST);
+
         if ($postForm){
 
             $user = new User();
             $user->setName($postForm['name']);
             $user->setEmail($postForm['email']);
             $user->setPassword(md5($postForm['password']));
-            var_dump($user);
-
-            $validation = new Validator();
-            $validateCheck = $validation->validation(
-                ['name'=>['require', 'string'],
-                'email'=>['email', 'require'],
-                'password'=>['require', 'string']],
-                ['name'=>$postForm['name'], 'email'=>$postForm['email'], 'password'=>$postForm['password']]);
-            if ($validateCheck){
-                $user = new User();
-                $user->setName($postForm['name']);
-                $user->setEmail($postForm['email']);
-                $user->setPassword(md5($postForm['password']));
-                Auth::register($user);
-            }
+//            var_dump($user);
+            Auth::register($user);
 
         }
-        include "app/Views/header.html.php";
-        include "app/Views/registration.html.php";
+
+        View::show('registration');
+    //        include "app/Views/header.view.php";
+    //        include "app/Views/registration.view.php";
     }
 
     public function logout(){

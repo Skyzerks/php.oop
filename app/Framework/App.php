@@ -30,6 +30,7 @@ class App
         );
 
         if( $routeHandler = Routing::init()->getCurrRouteHandler() ) {
+
             $servicesContainer = new ServicesContainer();
             $className = 'App\Controllers\\'. $routeHandler[0];
             $methodName = $routeHandler[1];
