@@ -2,6 +2,9 @@
 namespace App\Controllers;
 
 use App\Controllers\Controller;
+use App\Models\Section;
+use App\Models\Topic;
+use App\Models\Post;
 use App\Models\User;
 use App\Framework\Routing;
 
@@ -17,11 +20,12 @@ class ForumController extends Controller
         $sectionSlug = $routeData[2];
         $topicId = $routeData[3];
 
+        $topic = Topic::get( $topicId)[0];
+        $posts = Post::getByTopic_Id( $topicId);
 
-        var_dump( Routing::getRouteArgs() );
+//        var_dump( Routing::getRouteArgs() );
 
-          echo 'topic';
-
+        View::view("topic", ['posts' => $posts, 'topic' => $topic]);
     }
 
     public function showSection() {
@@ -29,17 +33,19 @@ class ForumController extends Controller
         $routeData = Routing::getRouteArgs();
         $sectionSlug = $routeData[2];
 
-        $section = DB::select( 'SELECT * FROM sections WHERE slug = ?', [$sectionSlug] );
-        var_dump( $section[0] );
+        $section = Section::getBySlug( $sectionSlug)[0];
+        $topics = Topic::getBySection_Id( $section->getId() );
 
-        $topics = DB::select(
-                   'SELECT * FROM topics  WHERE section_id = ?',
-            [$section[0]['id']]
-        );
-        var_dump( $topics[0] );
+//        $section = DB::select( 'SELECT * FROM sections WHERE slug = ?', [$sectionSlug] );
+//        var_dump( $section[0] );
+//
+//        $topics = DB::select(
+//                   'SELECT * FROM topics  WHERE section_id = ?',
+//            [$section[0]['id']]
+//        );
+//        var_dump( $topics[0] );
 
-        echo 'section';
-
+        View::show("section", ['section'=> $section, 'topics' => $topics]);
     }
 
 }
