@@ -13,15 +13,19 @@ class Auth implements AuthInterface
     public static function login( Array $credentials ){
 
         $credentials['email'] ;
-        $credentials['pass'];
+        $credentials['password'];
 
-        $arguments = [$credentials['email'],md5($credentials['pass'])];
+        $arguments = [$credentials['email'],md5($credentials['password'])];
 
         // DB select
        $res = DB::select("SELECT * FROM users WHERE `email` =? AND `password` = ?",$arguments);
         if(!empty($res)) {
+
+            var_dump($res);
+
             $user = (new User())->hydrate($res);
             $_SESSION['user_id'] = $res[0]['id'];
+            $_SESSION['is_admin'] = $res[0]['is_admin'];
             self::$user = $user;
             return true;
         }

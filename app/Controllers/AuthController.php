@@ -24,9 +24,6 @@ class AuthController extends Controller
     public function registration()
     {
         $postForm = isset($_POST['reg']) ? $_POST['reg'] : null;
-
-        var_dump($_POST);
-
         if ($postForm){
 
             $user = new User();
