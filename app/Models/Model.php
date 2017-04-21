@@ -91,6 +91,12 @@ abstract class Model implements ModelInterface
             return $model->hydrate(DB::select("SELECT * FROM $model->table WHERE `$var`=?",[$args[0]]));
         }
 
+        if( substr( $name, 0, 10 ) === "searchLike" ){
+            $var = lcfirst(substr($name, 10));
+            return $model->hydrate(DB::select("SELECT * FROM $model->table WHERE `$var` LIKE '%?%'",[$args[0]]));
+
+        }
+
     }
     public function save()
     {

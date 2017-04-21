@@ -9,7 +9,7 @@ class SearchController extends Controller
     public function showResults() {
 
         $searchPhrase = $_GET['find'];
-        $resultArray = Post::getPostsByText($searchPhrase);
+        $resultArray = Post::searchLikeText($searchPhrase);
 
         var_dump($resultArray);
         exit();
