@@ -10,8 +10,8 @@ class AccountController extends Controller
 
     public function showAccount()
     {
-        echo __DIR__."<br>";
-        echo "TODO: Account";
+
+        //TODO: Account
 
         View::show('account');
     }

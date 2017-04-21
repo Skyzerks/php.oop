@@ -13,11 +13,13 @@
     <ul>
         <li><a href="/">Forum (Main)</a></li>
         <?php if(isset($_SESSION['user_id'])){?> <li><a href="/account">My account</a></li> <?php } ?>
-        <li><a href="/login">login</a></li>
-        <li><a href="/registration">registration</a></li>
-        <form action="" method="get">
+        <?php if(!isset($_SESSION['user_id'])){?>
+            <li><a href="/login">login</a></li>
+            <li><a href="/registration">registration</a></li>
+        <?php } else { ?> <li><a href="/logout">logout</a></li> <?php } ?>
+        <form action="/search" method="get">
             <input type="text" name="find" placeholder="Find yeti">
-
+            
             <input type="submit" value="Find"><br/>
         </form>
     </ul>

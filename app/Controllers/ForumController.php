@@ -21,7 +21,7 @@ class ForumController extends Controller
         $topicId = $routeData[3];
 
         $topic = Topic::get( $topicId)[0];
-        $posts = Post::getByTopic_Id( $topicId);
+        $posts = Post::getByTopic_Id( $topicId );
 
 //        var_dump( Routing::getRouteArgs() );
 
