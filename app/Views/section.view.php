@@ -1,5 +1,5 @@
 <h1><?=$data['section']->getTitle()?> Topics</h1>
-<?php var_dump($data['topics'])  ?>
+<?php var_dump($data)  ?>
 
 <form action="post">
     <input type="text" name="section[newTitle]" placeholder="Тема">

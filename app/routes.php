@@ -6,7 +6,6 @@ $_routes = [
 
     '/section/([a-z]*)/([0-9]+)' => ['handler' => ['ForumController','showTopic']],
     '/section/([a-z]*)' => ['handler' => ['ForumController','showSection']],
-    '/section/([a-z]*)/([a-z]*)/([0-9]+)' => ['handler' => ['ForumController','showTopic']],
     '/login' => ['handler'=>['AuthController', 'login']],
     '/logout' => ['handler'=>['AuthController', 'logout']],
     '/registration' => ['handler'=>['AuthController', 'registration']],

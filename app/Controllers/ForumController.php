@@ -20,8 +20,8 @@ class ForumController extends Controller
         $sectionSlug = $routeData[2];
         $topicId = $routeData[3];
 
-        $topic = Topic::get( $topicId)[0];
-        $posts = Post::getByTopic_Id( $topicId );
+        $topic = Topic::getByTopic_id( $topicId)[0];
+        $posts = Post::getByPost_Id( $topicId );
 
 //        var_dump( Routing::getRouteArgs() );
 
@@ -47,5 +47,5 @@ class ForumController extends Controller
 
         View::show("section", ['section'=> $section, 'topics' => $topics]);
     }
-    
+
 }
