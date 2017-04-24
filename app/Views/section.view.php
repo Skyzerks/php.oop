@@ -7,9 +7,8 @@
 </form>
 
 <ul>
-    <?php foreach($data['topics'] as $topic){ ?>
-
-            <li><a href="/section/<?=$data['section']->getSlug()?>"><?=$topic->getTitle()?></a></li>
+    <?php foreach($data['topics'] as $topic){ var_dump($topic) ?>
+            <li><a href="/section/<?=$data['section']->getSlug()?>/<?=$topic->getId()?>"><?=$topic->getTitle()?></a></li>
 
     <?php }?>
 </ul>

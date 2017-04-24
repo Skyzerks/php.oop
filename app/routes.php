@@ -10,7 +10,8 @@ $_routes = [
     '/logout' => ['handler'=>['AuthController', 'logout']],
     '/registration' => ['handler'=>['AuthController', 'registration']],
     '/account' => ['handler'=>['AccountController', 'showAccount']],
-    '/search' => ['handler' => ['SearchController', 'showResults']]
+    '/search' => ['handler' => ['SearchController', 'showResults']],
+
 
 
 

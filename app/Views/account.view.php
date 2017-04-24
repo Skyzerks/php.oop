@@ -6,3 +6,15 @@
 
     <input type="submit" value="Change"><br/>
 </form>
+
+<?php var_dump($data['user_posts']); ?>
+
+<?php foreach( $data['user_posts'] as $post ) { ?>
+
+    <?=$post->getText() ?>
+    <br>
+    <small><?=$post->getCreated_at() ?></small>
+
+    <hr>
+
+<?php } ?>

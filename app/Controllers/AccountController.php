@@ -5,16 +5,24 @@ namespace App\Controllers;
 
 use App\Controllers\Controller;
 use App\Framework\View;
+use App\Models\Post;
+use App\Models\User;
 
 class AccountController extends Controller
 {
 
     public function showAccount()
     {
+        var_dump($_SESSION);
+
+        $user_posts=(new user)->posts();
+//        var_dump($user_posts);
+//        exit();
 
         //TODO: Account
+//        var_dump($posts);
 
-        View::show('account');
+        View::show('account', ['user_posts'=> $user_posts]);
     }
 
     public function showUserPosts() {

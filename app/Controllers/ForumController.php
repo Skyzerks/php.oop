@@ -20,12 +20,15 @@ class ForumController extends Controller
         $sectionSlug = $routeData[2];
         $topicId = $routeData[3];
 
-        $topic = Topic::getByTopic_id( $topicId)[0];
-        $posts = Post::getByPost_Id( $topicId );
+//        var_dump($topicId);
+//        exit();
+
+        $topic = Topic::get( $topicId);
+        $posts = Post::getById( $topicId );
 
 //        var_dump( Routing::getRouteArgs() );
 
-        View::view("topic", ['posts' => $posts, 'topic' => $topic]);
+        View::show("topic", ['posts' => $posts, 'topic' => $topic]);
     }
 
     public function showSection() {

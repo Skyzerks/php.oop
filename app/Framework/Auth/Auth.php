@@ -42,7 +42,15 @@ class Auth implements AuthInterface
     }
 
     public static function getLoggedUser(){
-        return self::$user;
+        if( self::$user ) {
+            return self::$user;
+        }
+        else if( isset($_SESSION['user_id']) ) {
+            self::$user = User::get( $_SESSION['user_id'] );
+            return self::$user;
+        }
+
+        return null;
     }
     public static function CheckAuthSession(){
 

@@ -48,6 +48,7 @@ class DB implements DatabaseInterface
         $db = self::$instance;
         $stmt = $db->pdo->prepare($query);
         $stmt->execute($args);
+        
 
         return $stmt->fetchAll();
     }

@@ -1,8 +1,17 @@
-<form action="/search" method="get">
-    <input type="text" name="find" placeholder="Find yeti">
 
-    <input type="submit" value="Find"><br/>
-</form>
+
+<?php var_dump($data['results'][0]);  ?>
+
+<ul>
+    <?php foreach($data['results'] as $result){ ?>
+
+        <li><a href="/section/<?=$result['slug']?>"><?=$result['title']?></a></li>
+
+<!--        --><?php //var_dump($result->getText()); ?>
+
+    <?php }?>
+</ul>
+
 
 
 <!--TODO: search results-->

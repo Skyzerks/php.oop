@@ -1,4 +1,6 @@
-<h1><?= $data['topic']->getTitle() ?></h1>
+<?php var_dump($data['posts']); ?>
+
+<h1><?= $data['topic'][0]->getTitle() ?></h1>
 
 <form action="post">
     <textarea name="topic[newMessage]" id="" cols="30" rows="3"></textarea>
