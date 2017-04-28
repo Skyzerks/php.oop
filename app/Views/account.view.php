@@ -7,7 +7,7 @@
     <input type="submit" value="Change"><br/>
 </form>
 
-<?php //var_dump($data['user_posts']); ?>
+<?php var_dump($data['user_posts']); ?>
 <?php //var_dump($_POST); ?>
 
 

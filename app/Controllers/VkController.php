@@ -42,17 +42,14 @@ class VkController extends Controller
             $user->setVk_id($userId);
             $user->setEmail($userEmail);
             $user->setName($res['first_name'] .' '. $res['last_name']);
-            var_dump( $user );
+//            var_dump( $user );
             $user->save();
 
         }
+
+//        var_dump($checkUser[0]);
         Auth::setLoggedUser( $checkUser[0] );
-        header('/');
+        header('location: /');
         exit();
-    }
-    
-    public function vkLogin(User $user){
-        var_dump($user);
-        echo 'hi';
     }
 }

@@ -37,6 +37,8 @@ class Routing
         foreach ($this->routes as $routePattern => $val) {
             if( preg_match( '/^'.addcslashes($routePattern,'/').'$/', $route) ) {
 
+//                var_dump($route);
+
                 if( $this->checkPolicy( $val ) ) {
                     return $val['handler'];
                 }

@@ -18,7 +18,7 @@ class AccountController extends Controller
 
         $user_posts=(new user)->posts();
         $user = Auth::getLoggedUser();
-        var_dump($user);
+//        var_dump($user);
 //        var_dump($user_posts);
 //        exit();
 

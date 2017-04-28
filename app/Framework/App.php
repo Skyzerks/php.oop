@@ -21,6 +21,7 @@ class App
         set_exception_handler([$this, 'exception_handler']);
 
         $config = Config::init();
+        View::$config= $config;
 
         $database = DB::init(
             $config->get('db.host'),
