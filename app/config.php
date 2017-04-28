@@ -16,5 +16,10 @@ $_config = [
     'admin' => [
         'email' => 'kwantum03@gmail.com'
     ],
-    'lotLimit'=>"3"
+    'lotLimit'=>"3",
+    'vk_info'=> [
+        'client_id' => 6004586,
+        'client_secret' => 'T2Ibr7V1DYBGT25zkG0d',
+        'redirect_uri' => 'http://php.oop.local/vkAuth'
+    ]
 ];

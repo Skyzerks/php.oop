@@ -11,8 +11,11 @@
 <body>
 <header>
     <ul>
+        <a href="https://oauth.vk.com/authorize?
+        client_id=<?=$this->config->get('vk_info.client_id')?>&display=page&redirect_uri=<?=$this->config->get('vk_info.redirect_uri')?>&code=&response_type=code&v=5.63&scope=email" target="_blank">VK login</a>
         <li><a href="/">Forum (Main)</a></li>
         <?php if(isset($_SESSION['user_id'])){?> <li><a href="/account">My account</a></li> <?php } ?>
+<!--        <li><a href="/vkAuth">VK login</a></li>-->
         <?php if(!isset($_SESSION['user_id'])){?>
             <li><a href="/login">login</a></li>
             <li><a href="/registration">registration</a></li>

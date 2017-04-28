@@ -3,6 +3,7 @@
 //phpinfo();
 //exit();
 
+
 session_start();
 
 define('APP_MODE', 'DEBUG');

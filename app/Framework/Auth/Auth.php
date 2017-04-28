@@ -52,6 +52,12 @@ class Auth implements AuthInterface
 
         return null;
     }
+
+    public static function setLoggedUser(User $user){
+        self::$user = $user;
+        $_SESSION['user_id'] = self::$user->getId();
+    }
+
     public static function CheckAuthSession(){
 
     }

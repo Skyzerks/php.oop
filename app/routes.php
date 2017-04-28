@@ -11,8 +11,7 @@ $_routes = [
     '/registration' => ['handler'=>['AuthController', 'registration']],
     '/account' => ['handler'=>['AccountController', 'showAccount']],
     '/search' => ['handler' => ['SearchController', 'showResults']],
-
-
-
+    '/vkAuth' => ['handler' => ['VkController', 'vkCallback']],
+    '/vkLogin' => ['handler' => ['VkController', 'vkLogin']]
 
 ];

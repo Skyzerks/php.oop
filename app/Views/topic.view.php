@@ -1,5 +1,5 @@
-<?php var_dump($data['posts']); ?>
-
+<?php //var_dump($data['posts']); ?>
+    
 <h1><?= $data['topic'][0]->getTitle() ?></h1>
 
 <form action="post">

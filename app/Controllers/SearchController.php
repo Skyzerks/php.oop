@@ -16,7 +16,7 @@ class SearchController extends Controller
 //        var_dump();
 //        exit();
 //        $results[] = Post::getByText($resultArray[0]->getText())[0]->getText();
-        $results = DB::select("SELECT t.title, t.id, s.slug FROM `posts` p
+        $results = DB::select("SELECT t.title, t.id, s.slug, p.text FROM `posts` p
             LEFT JOIN `topics` t ON p.topic_id = t.id
             LEFT JOIN `sections` s ON t.section_id = s.id
             WHERE p.`text` LIKE '%$searchPhrase%' OR t.title LIKE '%$searchPhrase%' OR s.title LIKE '%$searchPhrase%' 

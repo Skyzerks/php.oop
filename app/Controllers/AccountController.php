@@ -7,6 +7,7 @@ use App\Controllers\Controller;
 use App\Framework\View;
 use App\Models\Post;
 use App\Models\User;
+use App\Framework\Auth\Auth;
 
 class AccountController extends Controller
 {
@@ -16,6 +17,8 @@ class AccountController extends Controller
         var_dump($_SESSION);
 
         $user_posts=(new user)->posts();
+        $user = Auth::getLoggedUser();
+        var_dump($user);
 //        var_dump($user_posts);
 //        exit();
 
@@ -34,7 +37,7 @@ class AccountController extends Controller
 
 //        var_dump( Routing::getRouteArgs() );
 
-        View::view("topic", ['posts' => $posts, 'topic' => $topic]);
+        View::show("topic", ['posts' => $posts, 'topic' => $topic]);
     }
 
 }
