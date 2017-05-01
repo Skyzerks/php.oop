@@ -25,7 +25,7 @@ class Auth implements AuthInterface
 
             $user = (new User())->hydrate($res);
             $_SESSION['user_id'] = $res[0]['id'];
-            $_SESSION['user_name'] = $res[0]['user_name'];
+            $_SESSION['user_name'] = $res[0]['name'];
             $_SESSION['is_admin'] = $res[0]['is_admin'];
             self::$user = $user;
             return true;

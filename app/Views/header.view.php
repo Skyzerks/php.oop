@@ -22,8 +22,17 @@
     <ul>
         <a href="https://oauth.vk.com/authorize?client_id=<?=$config->get('vk_info.client_id')?>&display=page&redirect_uri=<?=$config->get('vk_info.redirect_uri')?>&code=&response_type=code&v=5.63&scope=email" target="_blank">VK login</a>
         <li><a href="/">Forum (Main)</a></li>
-        <?php if(isset($_SESSION['user_id'])){?> <li><a href="/account">My account</a></li> <?php } ?>
-<!--        <li><a href="/vkAuth">VK login</a></li>-->
+        <?php if(isset($_SESSION['user_id'])){?>
+            <li><a href="/account">My account</a></li>
+        <?php if($_SESSION['is_admin']==1){?>
+                <li><a href="/admin">Admin</a></li>
+                <ul>
+                    <li><a href="/admin/posts">Posts</a></li>
+                    <li><a href="/admin/sections">Sections</a></li>
+                    <li><a href="/admin/topics">Topics</a></li>
+                    <li><a href="/admin/users">Users</a></li>
+                </ul>
+        <?php } } ?>
         <?php if(!isset($_SESSION['user_id'])){?>
             <li><a href="/login">login</a></li>
             <li><a href="/registration">registration</a></li>

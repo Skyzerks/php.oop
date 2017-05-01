@@ -12,6 +12,11 @@ $_routes = [
     '/account' => ['handler'=>['AccountController', 'showAccount']],
     '/search' => ['handler' => ['SearchController', 'showResults']],
     '/vkAuth' => ['handler' => ['VkController', 'vkCallback']],
-    '/vkLogin' => ['handler' => ['VkController', 'vkLogin']]
+    '/vkLogin' => ['handler' => ['VkController', 'vkLogin']],
 
+    '/admin' => ['handler' => ['Admin\AdminController', 'mainController']],
+    '/admin/posts' => ['handler' => ['Admin\AdminController', 'postsController']],
+    '/admin/sections' => ['handler' => ['Admin\AdminController', 'sectionsController']],
+    '/admin/topics' => ['handler' => ['Admin\AdminController', 'topicsController']],
+    '/admin/users' => ['handler' => ['Admin\AdminController', 'usersController']],
 ];

@@ -2,28 +2,47 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\Controller;
+use App\Framework\View;
+use App\Database\DB;
 
-class ForumController extends Controller
+class AdminController extends Controller
 {
 
-    public function create(){
-//        TODO: CRUD create func
+    public function mainController(){
+
+        View::show('Admin\admin');
+    }
+    public function postsController(){
+
+        $posts= (DB::select('SELECT * FROM `posts`'));
+//        var_dump($posts[0]['topic_id']); exit();
+        foreach($posts as $key => $post) {
+            $topics[$key] = (DB::select('SELECT * FROM `topics` WHERE `id`=' . $post['topic_id']));
+        }
+        View::show('Admin\posts', ['posts'=> $posts, 'topics' => $topics]);
     }
 
-    public function read(){
-//        TODO: CRUD read func
+    public function sectionsController(){
+
+        $sections= (DB::select('SELECT * FROM `sections`'));
+
+        View::show('Admin\sections', ['sections' => $sections]);
     }
 
-    public function update(Int $id){
-        $model = new static;
-//        return $model->hydrate(DB::select("UPDATE $model->table SET  `id`=?", [$id]));
+    public function topicsController(){
+
+        $topics = (DB::select('SELECT * FROM `topics`'));
+
+        View::show('Admin\topics', ['topics' => $topics]);
     }
 
-    public function delete(Int $id){
-        $model = new static;
-        return $model->hydrate(DB::select("DELETE * FROM $model->table WHERE `id`=?", [$id]));
-    }
+    public function usersController(){
 
+        $users = (DB::select('SELECT * FROM `users`'));
+
+
+        View::show('Admin\users', ['users'=>$users]);
+    }
 
 
 }
