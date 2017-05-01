@@ -19,4 +19,9 @@ $_routes = [
     '/admin/sections' => ['handler' => ['Admin\AdminController', 'sectionsController']],
     '/admin/topics' => ['handler' => ['Admin\AdminController', 'topicsController']],
     '/admin/users' => ['handler' => ['Admin\AdminController', 'usersController']],
+
+    '/admin/([a-z]*)?method=edit&id=([0-9]+)' => ['handler' => ['Admin\ActionController', 'update']],
+    '/admin/([a-z]*)?method=create' => ['handler' => ['Admin\ActionController', 'create']],
+    '/admin/([a-z]*)?method=delete&id=([0-9]+)' => ['handler' => ['Admin\ActionController', 'delete']],
+
 ];

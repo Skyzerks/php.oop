@@ -43,7 +43,7 @@ posts view page <br>
                 <?= $post['user_id'] ?>
             </td>
             <td style="border: solid 1px black; padding: 10px">
-                <a href="/admin/user?method=edit&id=<?=$post['id']?>">Редагувати</a>
+                <a href="/admin/post?method=edit&id=<?=$post['id']?>">Редагувати</a>
             </td>
             <td style="border: solid 1px black; padding: 10px">
                 <!--                <form action="/admin/user" method="post">-->
@@ -51,7 +51,7 @@ posts view page <br>
                 <!--                    <input type="hidden" name="id" value="--><?//=$user['id']?><!--">-->
                 <!--                    <button type="submit">Delete</button>-->
                 <!--                </form>-->
-                <a href="/admin/user?method=delete&id=<?=$post['id']?>">Видалити</a>
+                <a href="/admin/post?method=delete&id=<?=$post['id']?>">Видалити</a>
             </td>
         </tr>
     <?php } ?>

@@ -35,7 +35,7 @@ sections view page
 <!--                --><?//= $section['slug'] ?>
 <!--            </td>-->
             <td style="border: solid 1px black; padding: 10px">
-                <a href="/admin/user?method=edit&id=<?=$section['id']?>">Редагувати</a>
+                <a href="/admin/section?method=edit&id=<?=$section['id']?>">Редагувати</a>
             </td>
             <td style="border: solid 1px black; padding: 10px">
                 <!--                <form action="/admin/user" method="post">-->
@@ -43,7 +43,7 @@ sections view page
                 <!--                    <input type="hidden" name="id" value="--><?//=$user['id']?><!--">-->
                 <!--                    <button type="submit">Delete</button>-->
                 <!--                </form>-->
-                <a href="/admin/user?method=delete&id=<?=$section['id']?>">Видалити</a>
+                <a href="/admin/section?method=delete&id=<?=$section['id']?>">Видалити</a>
             </td>
         </tr>
     <?php } ?>
